@@ -5,7 +5,7 @@ error: '',
 if (username.trim().length !== 0 && password.trim().length !== 0) {
 const requestBody = {username:username,password:password}
 try {
-fetch("auth/register",{
+fetch("api/auth/register",{
 headers:{
     "Content-Type":"application/json",   
 },
@@ -21,7 +21,6 @@ else{
 }})
 }
 catch (e) {
-console.log(e)
 response.error = 'Network error';
 }} 
 else {

@@ -5,7 +5,7 @@ error: '',
 if (username.trim().length !== 0 && password.trim().length !== 0) {
 const requestBody = {username:username,password:password}
 try {
-fetch("auth/login",{
+fetch("api/auth/login",{
 headers:{
     "Content-Type":"application/json",   
 },
@@ -13,9 +13,11 @@ method:"POST",
 body: JSON.stringify(requestBody)
 }).then((response)=>(response.json())).then(data=>{
 if(data.error){
-    console.log("Error:",data.error)
+    console.log(data.error)
+    response.error = data.error
 }else{
-    const token = localStorage.setItem("token",data.token)
+   localStorage.setItem("token",data.token)
+   localStorage.setItem("user",data.user)
     location.href = "/"
 }
 })

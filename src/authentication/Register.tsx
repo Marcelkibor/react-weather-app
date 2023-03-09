@@ -17,7 +17,7 @@ const handleRegister = async(e: { preventDefault: () => void; })=>{
   e.preventDefault()  
   const error = await RegisterRequest(username,password)
     if(error){
-      console.log(`Error ${error}`)
+      alert(error)
     }
     }
   return (

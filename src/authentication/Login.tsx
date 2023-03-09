@@ -14,7 +14,7 @@ const Login = () => {
   const handleLogin = async() =>{
   const error = await LoginRequest(username,password)
   if(error){
-    console.log(`Error ${error}`)
+    alert(error)
   }
   }
   return (
@@ -24,12 +24,12 @@ const Login = () => {
 <Form>
 <Form.Group className="mb-3" controlId="formBasicEmail">
 <Form.Label>Username</Form.Label>
-<Form.Control onChange={onChange} type="username" placeholder="Enter email" name='username' value={username}/>
+<Form.Control onChange={onChange} type="username" autoSave='true' autoComplete='true' placeholder="Enter email" name='username' value={username}/>
 </Form.Group>
 
 <Form.Group className="mb-3" controlId="formBasicPassword">
 <Form.Label>Password</Form.Label>
-<Form.Control onChange={onChange} type="text" placeholder="Password" name='password' value={password} />
+<Form.Control onChange={onChange} type="text" autoSave='true' autoComplete='true'placeholder="Password" name='password' value={password} />
 </Form.Group>
 <Button variant="success" onClick={handleLogin}>
 Login
