@@ -4,6 +4,7 @@ import RegisterRequest from './RegisterRequest';
 
 
 const Register = () => {
+
 const [formData,setFormData] = useState({
     username:'',
     password:''
@@ -12,8 +13,9 @@ const {username,password} = formData;
 const onChange = (e: { target: { name: any; value: any; };
 })=>{setFormData({...formData, [e.target.name]:e.target.value})}
     
-const handleRegister = async()=>{
-    const error = await RegisterRequest(username,password)
+const handleRegister = async(e: { preventDefault: () => void; })=>{
+  e.preventDefault()  
+  const error = await RegisterRequest(username,password)
     if(error){
       console.log(`Error ${error}`)
     }

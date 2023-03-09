@@ -11,8 +11,15 @@ headers:{
 },
 method:"POST",
 body: JSON.stringify(requestBody)
-}).then((Response)=>Promise.all([Response.json(),Response.headers])).then(([requestBody,headers])=>{
-console.log(headers)})}
+}).then((response)=>(response.json())).then(data=>{
+if(data.error){
+    console.log("Error:",data.error)
+}else{
+    const token = localStorage.setItem("token",data.token)
+    location.href = "/"
+}
+})
+}
 catch (e) {
 console.log(e)
 response.error = 'Network error';
