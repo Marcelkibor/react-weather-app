@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { Button, Form } from 'react-bootstrap'
+import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import LoginRequest from './LoginRequest';
+import '../App.css'
+
 
 const Login = () => {
   const [formData,setFormData] = useState({
@@ -15,30 +17,24 @@ const Login = () => {
   const error = await LoginRequest(username,password)
   if(error){
     alert(error)
-  }
-  }
+  }}
   return (
-    <div>
- <div style={{position:'absolute',top:'50%',left:'50%',transform: 'translate(-50%, -50%)'}}>
-  <h5>Login</h5>
-<Form>
-<Form.Group className="mb-3" controlId="formBasicEmail">
-<Form.Label>Username</Form.Label>
-<Form.Control onChange={onChange} type="username" autoSave='true' autoComplete='true' placeholder="Enter email" name='username' value={username}/>
-</Form.Group>
-
-<Form.Group className="mb-3" controlId="formBasicPassword">
-<Form.Label>Password</Form.Label>
+ <Container style = {{display:'flex'}}>
+<div className='loginSide'></div>
+<div className='loginDiv'>
+<Form >
+  <h5>Login</h5><br></br>
+    <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Control onChange={onChange} type="username" autoSave='true' autoComplete='true' placeholder="Username" name='username' value={username}/>
+      </Form.Group>
+    <Form.Group className="mb-3" controlId="formBasicPassword">
 <Form.Control onChange={onChange} type="text" autoSave='true' autoComplete='true'placeholder="Password" name='password' value={password} />
-</Form.Group>
-<Button variant="success" onClick={handleLogin}>
-Login
-</Button><span>Or <a style = {{textDecoration:'none'}}href='/register'>Register account</a></span>
-</Form>
-    </div>
-    </div>
-
-  )
+  </Form.Group>
+    <Button variant="success" onClick={handleLogin}>Login
+      </Button>&nbsp;&nbsp;<span>Or &nbsp;&nbsp; <a style = {{textDecoration:'none'}}href='/register'>Register</a></span>
+    </Form>
+</div>
+  </Container> 
+)
 }
-
 export default Login

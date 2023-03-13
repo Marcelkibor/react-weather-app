@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import {BoxArrowRight} from 'react-bootstrap-icons'
+import { CloudDrizzleFill } from 'react-bootstrap-icons'
 const Header = () => {
 const user = localStorage.getItem("user")
 const handleLogout = ()=>{
@@ -10,9 +11,12 @@ const handleLogout = ()=>{
   }
   return (
     <div>
-<Navbar bg="primary" variant="dark">
+<Navbar className='header' variant="dark">
 <Container>
-<Navbar.Brand href="#home">Weather Forecast</Navbar.Brand>
+  <Nav>
+  <CloudDrizzleFill color='white' size={40}/>
+&nbsp;&nbsp;<Navbar.Brand href="#home">SkyMaster</Navbar.Brand>
+  </Nav>
 <Nav>
 <Navbar.Text style={{color:'white'}}>
 Logged in as: <b>{user&&user}</b>

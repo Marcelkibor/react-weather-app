@@ -1,0 +1,38 @@
+*{
+    margin: 0% !important;
+    padding: 0% !important;
+}
+.loginSide{
+    background-color: #0fbcf9 !important;
+    height: 100vh !important;
+    width: 15vw;
+}
+.loginDiv{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: auto !important;
+}
+.header{
+    min-height: 70px;
+    background-color: #0097e6;
+    padding-left: 3% !important;
+}
+.searchLocation{
+    margin-top: 5% !important;
+    margin-bottom: 1% !important;
+    display: flex !important;
+    justify-content: center !important;
+}
+.locations{
+    background-color: #dcdde1;
+    width: fit-content;
+    min-width: 400px;
+    padding: 50px 0;
+    padding: 0.1% 0.1% 0.5% 0.1% !important;
+    margin: 0 auto !important;
+}
+.places{
+   background-color: white; 
+   margin-top: 5px !important;
+}

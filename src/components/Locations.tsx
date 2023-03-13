@@ -21,14 +21,12 @@ const Locations = () => {
     },[])
 
   return (
-    <div>
+    <div className='locations'>
         {loading?<p>Loading..</p>:<>
-        {locations?.locations?<>
-        <p>Locations available:
-            </p>
+        {locations.locations?<>
          {
           locations?.locations.map((item: string, index:any) => (
-            <div key={index}>{item}</div>
+            <div className = 'places'key={index}>{item}</div>
           ))  
          }
             </>:

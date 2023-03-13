@@ -9,6 +9,11 @@ const Dashboard = () => {
   return (
     <div>
       <Header/>
+      <div className='searchLocation'>
+    <input placeholder='Search Location'/>
+    <Button>Search</Button>
+      </div>
+     
       <Locations/>
     </div>
   )
