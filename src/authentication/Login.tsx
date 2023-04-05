@@ -28,7 +28,7 @@ const Login = () => {
         <Form.Control onChange={onChange} type="username" autoSave='true' autoComplete='true' placeholder="Username" name='username' value={username}/>
       </Form.Group>
     <Form.Group className="mb-3" controlId="formBasicPassword">
-<Form.Control onChange={onChange} type="text" autoSave='true' autoComplete='true'placeholder="Password" name='password' value={password} />
+<Form.Control onChange={onChange} type="password" autoSave='true'placeholder="Password" name='password' value={password} />
   </Form.Group>
     <Button variant="success" onClick={handleLogin}>Login
       </Button>&nbsp;&nbsp;<span>Or &nbsp;&nbsp; <a style = {{textDecoration:'none'}}href='/register'>Register</a></span>
