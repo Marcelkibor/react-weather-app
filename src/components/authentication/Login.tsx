@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Col, Container, Form, Row } from 'react-bootstrap'
 import LoginRequest from './LoginRequest';
-import '../App.css'
+import '../../App.css'
 
 
 const Login = () => {

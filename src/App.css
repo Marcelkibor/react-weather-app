@@ -32,6 +32,13 @@
     padding: 0.1% 0.1% 0.5% 0.1% !important;
     margin: 0 auto !important;
 }
+.paginate{
+    width: fit-content;
+    min-width: 400px;
+    padding: 50px 0;
+    padding: 0.3% 0% 0% 0% !important;
+    margin: 0 auto !important;
+}
 .places{
    background-color: white; 
    margin-top: 5px !important;

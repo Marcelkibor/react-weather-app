@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import { Button } from 'react-bootstrap'
-import Header from './Header'
-import Locations from './Locations/DisplayLocations'
+import Header from '../Header'
+import Locations from '../Locations/DisplayLocations'
 
 const Dashboard = () => {
 

@@ -27,25 +27,26 @@ useEffect(()=>{
 },[])
 
 const lastLocationIndex = currentPage * locationPerPage;
+console.log(`last location index ${lastLocationIndex}`)
 const firstLocationIndex  = lastLocationIndex - locationPerPage;
 var displayLocations;
 if(allLocations){
 displayLocations = allLocations.slice(firstLocationIndex,lastLocationIndex)
 }
   return (
-<div className='locations'>
-{loading?<p>Loading..</p>:<>
-{displayLocations?<>
-  {
-  displayLocations.map((item, index) => (
-    <div className = 'places'key={index}>{item}</div>
-  ))  
-  }
-  </>:
-  <>Loading locations...</>}
-</>
-}
-</div>
-  )
+    <><div className='locations'>
+      {loading ? <p>Loading..</p> : <>
+        {displayLocations ? <>
+          {displayLocations.map((item, index) => (
+            <div className='places' key={index}>{item}</div>
+          ))}
+
+        </> :
+          <>Loading locations...</>}
+      </>}
+    </div><div className='paginate'>
+        <Pagination allLocations={allLocations} locationPerPage={locationPerPage} setCurrentPage={setCurrentPage} />
+      </div></>
+ )
 }
 export default Locations

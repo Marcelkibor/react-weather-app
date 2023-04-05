@@ -1,17 +1,19 @@
 import React from 'react'
 
-const Pagination = (allLocations:any,locationPerPage:any) => {
+const Pagination = (props:any) => {
+  const {locationPerPage} = props
+  const {allLocations} = props
+  const {setCurrentPage} = props
   let pages = [];
-  for(let i = 1; i<=Math.ceil(allLocations/locationPerPage); i++){
+  for(let i = 1; i <=Math.ceil(allLocations.length/locationPerPage); i++){
     pages.push(i);
   }
   return (
     <div>
       {pages.map((page, index)=>{
-        return <button key={index}>{page}</button>
+        return <button onClick={()=>{setCurrentPage(page)}} key={index}>{page}</button>
       })}
     </div>
   )
 }
-
 export default Pagination
